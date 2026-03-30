@@ -13,8 +13,9 @@ export default function ResultCard({ restaurant: r }) {
       <h2>{r.name}</h2>
       <span className="cuisine-tag">{r.cuisine} / ${r.price} per person</span>
       <div className="meta">
-        <span>{r.walkMinutes} min walk</span>
+        <span>{r.deliveryMinutes} min delivery</span>
         <span>{r.rating} stars</span>
+        <span>{r.deliveryApps}</span>
       </div>
       <p className="description">{r.description}</p>
       <div className="dishes">

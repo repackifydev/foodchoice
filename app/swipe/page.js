@@ -152,7 +152,7 @@ export default function SwipePage() {
                 <h3>{topCard.name}</h3>
                 <span className="cuisine-tag">{topCard.cuisine} / ${topCard.price} per person</span>
                 <div className="meta">
-                  <span>{topCard.walkMinutes} min walk</span>
+                  <span>{topCard.deliveryMinutes} min delivery</span>
                   <span>{topCard.rating} stars</span>
                 </div>
                 <p className="description">{topCard.description}</p>

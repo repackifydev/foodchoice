@@ -187,7 +187,7 @@ export default function MoodPage() {
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <p style={{ fontWeight: 600, fontSize: 14 }}>{r.name}</p>
                         <p style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-                          {r.cuisine} / ${r.price} / {r.walkMinutes}min walk
+                          {r.cuisine} / ${r.price} / {r.deliveryMinutes}min delivery
                         </p>
                       </div>
                     </div>

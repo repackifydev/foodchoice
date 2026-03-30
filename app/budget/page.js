@@ -7,7 +7,7 @@ import { fireConfetti } from '@/lib/confetti';
 import ResultCard from '@/components/ResultCard';
 
 const walkFilters = [
-  { label: 'Any distance', value: 99 },
+  { label: 'Any time', value: 99 },
   { label: 'Under 8 min', value: 8 },
   { label: 'Under 15 min', value: 15 },
 ];
@@ -15,12 +15,12 @@ const walkFilters = [
 export default function BudgetPage() {
   const [step, setStep] = useState(1);
   const [maxPrice, setMaxPrice] = useState(12);
-  const [maxWalk, setMaxWalk] = useState(99);
+  const [maxDelivery, setMaxWalk] = useState(99);
   const [chosen, setChosen] = useState(null);
 
   const filtered = useMemo(
-    () => restaurants.filter(r => r.price <= maxPrice && r.walkMinutes <= maxWalk),
-    [maxPrice, maxWalk]
+    () => restaurants.filter(r => r.price <= maxPrice && r.deliveryMinutes <= maxDelivery),
+    [maxPrice, maxDelivery]
   );
 
   const sorted = useMemo(
@@ -81,14 +81,14 @@ export default function BudgetPage() {
           </p>
 
           <p className="text-center" style={{ color: 'var(--text-muted)', marginBottom: 12, fontSize: 13 }}>
-            Walk time:
+            Delivery time:
           </p>
 
           <div className="filter-chips">
             {walkFilters.map(f => (
               <button
                 key={f.value}
-                className={`chip${maxWalk === f.value ? ' selected' : ''}`}
+                className={`chip${maxDelivery === f.value ? ' selected' : ''}`}
                 onClick={() => setMaxWalk(f.value)}
               >
                 {f.label}
@@ -147,7 +147,7 @@ export default function BudgetPage() {
                       </div>
                       <h3>{r.name}</h3>
                       <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>
-                        {r.cuisine} / ${r.price} / {r.walkMinutes}min
+                        {r.cuisine} / ${r.price} / {r.deliveryMinutes}min
                       </p>
                     </div>
                   );

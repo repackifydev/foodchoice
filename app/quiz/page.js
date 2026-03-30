@@ -19,7 +19,7 @@ const questions = [
   {
     question: "Pick your ideal lunch setting:",
     options: [
-      { label: 'A', text: "Quick grab from a food truck, eat outside", tags: ['street-food', 'food-truck', 'outdoor', 'quick'], maxWalk: 15 },
+      { label: 'A', text: "Quick grab from a food truck, eat outside", tags: ['street-food', 'food-truck', 'outdoor', 'quick'], maxDelivery: 15 },
       { label: 'B', text: "Cozy sit-down spot with good vibes", tags: ['cozy', 'chill', 'sit-down', 'comfort'] },
       { label: 'C', text: "Bustling counter service, order and go", tags: ['quick', 'cheap', 'casual', 'classic'] },
       { label: 'D', text: "Anywhere with a nice patio", tags: ['outdoor', 'chill', 'bar-food', 'instagram'] },
@@ -35,12 +35,12 @@ const questions = [
     ],
   },
   {
-    question: "How far are you willing to walk?",
+    question: "How fast do you need delivery?",
     options: [
-      { label: 'A', text: "5 minutes max, I'm not about that walk life", tags: ['quick'], maxWalk: 8 },
-      { label: 'B', text: "10-15 minutes is fine for good food", tags: ['authentic'], maxWalk: 15 },
-      { label: 'C', text: "I'll walk 20+ minutes for the right spot", tags: ['quality', 'hearty'], maxWalk: 30 },
-      { label: 'D', text: "Distance is no object — take me there", tags: ['classic', 'unique'], maxWalk: 100 },
+      { label: 'A', text: "5 min or less, I need it NOW", tags: ['quick'], maxDelivery: 8 },
+      { label: 'B', text: "10-15 min is fine for quality", tags: ['authentic'], maxDelivery: 15 },
+      { label: 'C', text: "I can wait, just make it good", tags: ['quality', 'hearty'], maxDelivery: 30 },
+      { label: 'D', text: "Time is no issue at all", tags: ['classic', 'unique'], maxDelivery: 100 },
     ],
   },
   {
@@ -103,13 +103,13 @@ export default function QuizPage() {
 
     // Collect all tags from answers
     const tagScores = {};
-    let maxWalk = 100;
+    let maxDelivery = 100;
     answers.forEach((opt) => {
       opt.tags.forEach((tag) => {
         tagScores[tag] = (tagScores[tag] || 0) + 1;
       });
-      if (opt.maxWalk !== undefined) {
-        maxWalk = Math.min(maxWalk, opt.maxWalk);
+      if (opt.maxDelivery !== undefined) {
+        maxDelivery = Math.min(maxDelivery, opt.maxDelivery);
       }
     });
 
@@ -119,8 +119,8 @@ export default function QuizPage() {
       r.tags.forEach((tag) => {
         if (tagScores[tag]) score += tagScores[tag];
       });
-      // Penalize if too far to walk
-      if (r.walkMinutes > maxWalk) score -= 2;
+      // Penalize if too slow to deliver
+      if (r.deliveryMinutes > maxDelivery) score -= 2;
       return { restaurant: r, score };
     });
     scored.sort((a, b) => b.score - a.score);
