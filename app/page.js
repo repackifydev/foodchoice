@@ -16,7 +16,6 @@ const cards = [
   { href: '/8ball', title: 'Magic 8-Ball', desc: 'Shake the mystic orb for answers', color: '#6366f1' },
   { href: '/dice', title: 'Dice Roll', desc: 'Roll for cuisine + budget, get a match', color: '#4ecdc4' },
   { href: '/random', title: 'Quick Random', desc: 'No patience? Instant random pick', color: '#ff6b35' },
-  { href: '/map', title: 'Map Explorer', desc: 'Browse nearby spots on an interactive map', color: '#06b6d4' },
 ];
 
 export default function Home() {
