@@ -165,7 +165,7 @@ export default function QuizPage() {
         <div style={{
           textAlign: 'center',
           padding: 32,
-          background: 'var(--card-bg)',
+          background: 'var(--bg-card)',
           borderRadius: 16,
           border: '1px solid var(--border)',
           maxWidth: 500,
@@ -247,12 +247,13 @@ export default function QuizPage() {
                 alignItems: 'center',
                 gap: 14,
                 padding: '16px 20px',
-                background: 'var(--card-bg)',
+                background: 'var(--bg-card)',
                 border: '2px solid var(--border)',
                 borderRadius: 12,
                 cursor: 'pointer',
                 textAlign: 'left',
                 fontSize: 15,
+                color: 'var(--text)',
                 transition: 'all 0.2s ease',
               }}
             >
@@ -260,7 +261,8 @@ export default function QuizPage() {
                 width: 32,
                 height: 32,
                 borderRadius: '50%',
-                background: 'var(--border)',
+                background: 'var(--border-light)',
+                color: 'var(--text)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

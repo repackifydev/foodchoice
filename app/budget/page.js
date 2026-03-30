@@ -72,7 +72,7 @@ export default function BudgetPage() {
             <div className="budget-display">${maxPrice}</div>
 
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--text-muted)' }}>
-              <span>$5</span><span>$8</span><span>$10</span><span>$12</span><span>$15</span><span>$18</span>
+              <span>$5</span><span>$8</span><span>$10</span><span>$12</span><span>$15</span><span>$25</span>
             </div>
           </div>
 

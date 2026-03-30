@@ -152,7 +152,7 @@ export default function SlotsPage() {
           overflow: 'hidden',
           borderRadius: 12,
           border: '3px solid var(--border)',
-          background: 'var(--card-bg)',
+          background: 'var(--bg-card)',
           position: 'relative',
         }}>
           <div className="slot-reel-label" style={{
@@ -188,7 +188,7 @@ export default function SlotsPage() {
           overflow: 'hidden',
           borderRadius: 12,
           border: '3px solid var(--border)',
-          background: 'var(--card-bg)',
+          background: 'var(--bg-card)',
           position: 'relative',
         }}>
           <div className="slot-reel-label" style={{
@@ -226,7 +226,7 @@ export default function SlotsPage() {
           overflow: 'hidden',
           borderRadius: 12,
           border: '3px solid var(--border)',
-          background: 'var(--card-bg)',
+          background: 'var(--bg-card)',
           position: 'relative',
         }}>
           <div className="slot-reel-label" style={{
