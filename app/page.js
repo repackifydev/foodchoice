@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <div className="page-header">
         <h1>Where are we eating?</h1>
-        <p>Choose your method. {restaurants.length} restaurants near 501 Pedernales St. All within 10 min delivery.</p>
+        <p>Choose your method. {restaurants.length} restaurants near 501 Pedernales St. All under $20, delivered in 10 min.</p>
       </div>
       <div className="home-grid">
         {cards.map(c => (
